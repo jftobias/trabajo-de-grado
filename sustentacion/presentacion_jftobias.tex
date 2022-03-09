@@ -1,0 +1,77 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage[backend=bibtex, sorting=none]{biblatex}
+\addbibresource{biblio/referencias.bib}
+
+\usetheme{Berlin}
+\setbeamertemplate{caption}[numbered]
+\newcommand{\celda}[1]{
+	\begin{minipage}{2.5cm}
+		\vspace{5mm}
+		#1
+		\vspace{5mm}
+	\end{minipage}
+}
+
+
+\author[José Fernando Tobías Buelvas]{JOSÉ FERNANDO TOBÍAS BUELVAS\inst{1} }
+\title[Oscilaciones magnéticas en estructuras basadas en grafeno]{OSCILACIONES MAGNÉTICAS EN ESTRUCTURAS BASADAS EN GRAFENO}
+\date{2021} 
+\logo{\includegraphics[scale=0.045]{graficas/logo_acreditacion.png}}
+\titlegraphic{\includegraphics[width=1.2cm,height=1.2cm]{graficas/logo_fisica.jpg}}
+\institute[UA]{
+	\inst{1}
+		Universidad del Atlántico. Programa de Física.\\Facultad de Ciencias Básicas.\\
+		\vspace{2mm}}
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>{Contenido}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+
+\begin{document}
+	\small	
+	\begin{frame}
+		\maketitle
+	\end{frame}
+
+	\begin{frame}{Contenido}
+		\tableofcontents
+	\end{frame}
+
+	\input{capitulos/inicio}
+	\input{capitulos/introduccion}
+	\input{capitulos/espectro}
+	\input{capitulos/oscilaciones}
+
+
+	\input{capitulos/conclusiones}
+
+	\printbibliography
+
+	
+	\section*{}
+	\begin{frame}
+		\frametitle{GRACIAS POR SU ATENCIÓN}
+			\small{\textit{"Lo que sabemos es una gota, lo que desconocemos es un oceano".}}
+			\footnote{\scriptsize{Sir Isaac Newton (1643-1727)}}
+		%	\includegraphics[]{}
+	\end{frame}
+
+\end{document}
