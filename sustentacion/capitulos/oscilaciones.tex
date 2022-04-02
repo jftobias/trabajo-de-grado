@@ -87,19 +87,194 @@
   $G_A$ es la función avanzada de Green que toma la forma \cite{Vega2016}-\cite{Salazar2016}:
   \begin{equation}
     G_A(\epsilon) = \frac{1}{\epsilon'-\epsilon_n-\Sigma^A(\epsilon)} + \frac{1}{\epsilon'+\epsilon_n-\Sigma^A(\epsilon)},
-   \end{equation}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
+  En una forma compacta $G_R$ y $G_A$ pueden escribirse:\\
+  \begin{align}
+    G_R(\epsilon) = \frac{2(\epsilon'-i |\textbf{Im}\Sigma|)}{(\epsilon'-i |\textbf{Im}\Sigma|)^2-\epsilon_{n}^{2}}    \qquad G_A(\epsilon) = \frac{2(\epsilon'+i |\textbf{Im}\Sigma|)}{(\epsilon'+i |\textbf{Im}\Sigma|)^2-\epsilon_{n}^{2}}.
+  \end{align}
+
+  \vspace{0.5cm}
+  donde la función $\Sigma^R(\epsilon) = Re\Sigma(\epsilon)+i Im\Sigma(\epsilon)$ es la autoenergía retardada compleja.
 \end{frame}
 
 \begin{frame}
+  Usando la fórmula de sumatoria de Poisson:
+  \begin{equation}
+    \sum_{n=-\infty}^{\infty}F(n) = \textbf{Re}\sum_{r=-\infty}^{\infty}\int_{0}^{\infty}F(y)e^{2\pi i r y}dy,
+  \label{Fn}
+  \end{equation}
+  y aplicando el teorema del residuo, donde los polos est\'an dados por $\pm2i\epsilon|Im\Sigma|/\varepsilon_{a}^{2}$, se obtiene:
+  \begin{equation}
+    \sum_{n=-\infty}^{\infty}G_R G_A =\textbf{Re} \sum_{r=-\infty}^{\infty}\frac{4\pi}{\epsilon_{f}^{2}}\frac{\epsilon'}{|\textbf{Im}\Sigma|} e^{-4\pi r\frac{\epsilon'|\textbf{Im}\Sigma|}{\epsilon_{f}^{2}}} e^{2\pi i r \frac{\epsilon'^2}{\epsilon_{f}^{2}}}.
+    \label{GrGa}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
+  Teniendo en cuenta:
+  \begin{equation}
+    Res\left(h,z_{0}\right)=\lim_{z\rightarrow z_{0}}\frac{1}{\left(n-1\right)!}\frac{d^{n-1}}{dz^{n-1}}\left\{ \left(z-z_{0}\right)^{n}h\left(z\right)\right\}.
+    \label{res}
+  \end{equation}
+
+  se obtiene:
+  \begin{equation}
+    G_{R}^{2}=\frac{4\left(\epsilon'^{2}-2i\epsilon'|Im\Sigma|\right)}{\epsilon_{f}^{4}\left(-\frac{2i\epsilon'|Im\Sigma|}{\epsilon_{f}^{2}}-x^{2}\right)^{2}},
+    \label{Gr2}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
+  Aplicando la ecuaci\'on (\ref{Fn}) se tiene:
+  \begin{equation}
+    \sum_{n=-\infty}^{\infty}G_{R}^{2}=\sum_{r=-\infty}^{\infty}\frac{4\left(\epsilon'^{2}-2i\epsilon'|Im\Sigma|\right)}{\epsilon_{f}^{4}}e^{2\pi ir\left(\frac{\epsilon'^{2}}{\epsilon_{f}^{2}}\right)}\int_{-\infty}^{\infty}\frac{e^{2\pi irx}}{\left[-\frac{2i\epsilon'|Im\Sigma|}{\epsilon_{f}^{2}}-x\right]^{2}}dx.
+    \label{Gr22}
+  \end{equation}
+  Aplicando la expresi\'on (\ref{res}) en la ecuaci\'on (\ref{Gr2}) se obtiene
+  \begin{equation}
+      \sum_{n=-\infty}^{\infty}G_{R}^{2} =\textbf{Re} \sum_{r=-\infty}^{\infty}\frac{4\pi}{\epsilon_{f}^{2}}\frac{\epsilon'}{|\textbf{Im}\Sigma|} e^{2\pi i r \frac{\epsilon'^2}{\epsilon_{f}^{2}}} e^{-4\pi |r|\frac{\epsilon'|\textbf{Im}\Sigma|}{\epsilon_{f}^{2}}} \left( \frac{4\pi |r|\epsilon'|\textbf{Im}\Sigma|}{\epsilon_{f}^{2}}  \right).
+      \label{Gr23}
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  Igualmente se tiene que
+  \begin{equation}
+    \sum_{N}^{\infty}G_{A}^{2}=\sum_{r=-\infty}^{\infty}\frac{4\pi\epsilon'}{\epsilon_{f}^{2}|Im\Sigma|}e^{2\pi i\mid r\mid\left(\frac{\epsilon'^{2}}{\epsilon_{f}^{2}}\right)}e^{-\frac{4\pi\mid r\mid\epsilon'|Im\Sigma|}{\epsilon_{f}^{2}}}\left[\frac{4\pi\mid r\mid\epsilon'|Im\Sigma|}{\epsilon_{f}^{2}}\right].
+    \label{Ga2}
+  \end{equation}
+  Sustituyendo (\ref{GrGa}), (\ref{Gr23}) y (\ref{Ga2}) en (\ref{2ImGr2}), se obtiene:
+
+  \begin{equation}
+    \left[2ImG_{R}\left(k\right)\right]^{2}=\sum_{r=-\infty}^{\infty}\frac{4\pi\epsilon'}{\epsilon_{f}^{2}\mid Im\Sigma\mid}R_{D}e^{2\pi ir\left(\frac{\epsilon'^{2}}{\epsilon_{f}^{2}}\right)}\left[1+\frac{8\pi\mid r\mid\mid Im\Sigma\mid\epsilon'}{\epsilon_{f}^{2}}\right].
+    \label{2ImGr22}
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  Luego, la conductividad longitudinal toma la forma:
+  \begin{equation}
+    \sigma_{xx} = g \frac{2 e^2 L_x}{\hbar L_y \epsilon_{f}^{2}} \textbf{Re} \sum_{k,r}\int\left| t_{k,k}\right|^2 G_{xx}(\epsilon,r) \left(-\frac{\partial f}{\partial\epsilon}\right)d\epsilon,
+    \label{eq:sigmaxx}
+  \end{equation}
+
+  donde $$
+      G_{xx}(\epsilon,r) = \frac{\epsilon'}{|\textbf{Im}\Sigma|} e^{2\pi i r \frac{\epsilon'^2}{\epsilon_{f}^{2}}} R_D(\epsilon,r) \left[ 1+8\pi |r| \frac{|\textbf{Im}\Sigma|\epsilon'}{\epsilon_{f}^{2}}\right].
+    $$
+  $$ R_D(\epsilon,r) = \exp\left( -4\pi |r|\frac{|\textbf{Im}\Sigma|\epsilon'}{\epsilon_{f}^{2}}\right) $$
+\end{frame}
+
+\begin{frame}
+  Introduciendo el factor $S(\lambda,\delta)$ se puede escribir (\ref{eq:sigmaxx}) de forma compacta:
+  \begin{equation}
+    S(\lambda,\delta) = \sum_{r=-\infty}^{\infty} e^{-|r|\lambda}\cos\delta r = \frac{\sinh\lambda}{\cosh\lambda-\cos\delta},
+  \end{equation}
+  donde
+  \begin{equation}
+    \lambda= \frac{4\pi\epsilon'|\textbf{Im}\Sigma|}{\epsilon_{f}^{2}}
+  \end{equation}
+  y
+  \begin{equation}
+    \delta= 2\pi\frac{\epsilon'^2}{\epsilon_{f}^{2}}.
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  La conductividad se puede escribir como $\sigma_{xx} = \sigma_B+ \sigma_Q$ donde:
+  \begin{equation}
+    \sigma_B= \sigma_{o}\int d\epsilon N(\zeta)\frac{\epsilon}{|\textbf{Im}\Sigma|}\left(-\frac{\partial f}{\partial\epsilon}\right)S(\lambda,\delta).
+    \label{eq:sigmaB}
+  \end{equation}
+  Por otra parte,
+  \begin{equation}
+    \sigma_Q= -\sigma_{o}\int d\epsilon N(\zeta)\frac{\epsilon}{|\textbf{Im}\Sigma|}\left(-\frac{\partial f}{\partial\epsilon}\right) \left(\lambda_o \frac{\partial S(\lambda,\delta)}{\partial \lambda}\right),
+    \label{eq:sigmaQ}
+  \end{equation}
+  donde $\lambda_o=8 \pi\epsilon'|\textbf{Im}\Sigma|/\epsilon_{f}^{2}$.
+\end{frame}
+
+\begin{frame}
+  El parámetro $N(\zeta)$ está relacionado con los estados de Bloch,
+  \begin{equation}
+    N(\zeta)=\frac{L_{x}L_{y}}{a_{x}\pi^{2} \varepsilon_{f}^{2}}\int_{0}^{a_{x}/2l^{2}}dk_{y} \int_{0}^{2\pi}d\beta|t_{x,x}|^{2}.
+  \end{equation}
+
+  Luego, la conductividad longitudinal puede escribirse como:
+  \begin{equation}
+    \sigma_{xx}=\sigma_{o}\int  N(\zeta)\left(-\frac{\partial f}{\partial\epsilon}\right)\frac{\epsilon}{\mid \textbf{Im}\Sigma\mid}G_{xx}(\delta,\lambda)d\epsilon,
+    \label{condxx}
+  \end{equation}
+
+  donde $G_{xx}(\delta,\lambda)=\left[ 1-\lambda_{o}\frac{\partial }{\partial\lambda}\right] S(\delta,\lambda)$.
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[scale=0.5]{graficas/fig5.png}
+      \caption{$\sigma_{xx}$ vs. $B$ para $T = 150 K$ (negra), $T = 200 K$ (roja) y $T = 250 K$ (azul).}
+      \label{sigmavsB}
+      \centering
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[scale=0.5]{graficas/fig6.png}
+      \caption{$\sigma_{xx}$ vs. $B$ ($T = 300 K$).}
+      \label{sigma300k}
+      \centering
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[scale=0.5]{graficas/fig8.png}
+      \caption{$\sigma_{B}$ vs. $B$ $T = 150 K$ (negra), $T = 200 K$ (roja) y $T = 250 K$ (azul).}
+      \label{cont_Boltz}
+      \centering
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[scale=0.5]{graficas/fig9.png}
+      \caption{$\sigma_{Q}$ vs. $B$ $T = 150 K$ (negra), $T = 200 K$ (roja) y $T = 250 K$ (azul).}
+      \label{cont_Cuant}
+      \centering
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h!]
+    \begin{center}
+      \includegraphics[scale=0.4]{graficas/fig7.png}
+      \caption{$\sigma_{xx}$, $\sigma_{B}$ y $\sigma_{Q}$ vs. $B$ ($T = 300 K$).}
+      \label{contrib}
+      \centering
+    \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  Para todos los cálculos, los parámetros utilizados son $v_{f}=1.15\times 10^{6}$ m/s, $a_{x}=a_{y}=a=50$ nm,
+  $V_{o}=1\times10^{-6}$ eV, $U_{x}=U_{y}=U_{o}=0.5\times10^{-3}$ eV, $n_{i}=3\times10^{15}$ m$^{-2}$
+  y la energía de Fermi $\mu_{o}=100$ meV.\\
+
+  \vspace{0.5cm}
+
+  Las oscilaciones a altas temperaturas debidas a la contribución $\sigma_{Q} $ responden a variaciones periódicas
+  del parámetro de desorden, las cuales están determinadas por la variación del factor de forma $ S(\delta,\lambda)$.
 \end{frame}
 
 \subsection{Tiempo de relajación del electrón}
