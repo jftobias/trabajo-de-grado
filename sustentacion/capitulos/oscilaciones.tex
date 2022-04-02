@@ -280,16 +280,78 @@
 \subsection{Tiempo de relajación del electrón}
 
 \begin{frame}
+  La parte imaginaria de la auto energía $\Sigma(\epsilon)$ está relacionada con la dispersión del electrón
+  por medio del tiempo de relajación electrónico \cite{Ando1974},
+  \begin{equation}
+    \frac{\hbar}{\tau} = |\textbf{Im}\Sigma|.
+  \end{equation}
+  En este trabajo se analiza un modelo de impurezas como potenciales puntuales
+  \begin{equation}
+    V(\Vec{r}-\Vec{R}) = V_0 \delta(\Vec{r}-\Vec{R}),
+  \end{equation}
 \end{frame}
 
 \begin{frame}
+  Similarmente a como se desarrolló anteriormente, se tiene:
+  \begin{equation}
+    G_{R}(n,k) = \frac{2(\epsilon' - i|Im\Sigma|)}{(\epsilon' - |Im\Sigma|)^{2} - \epsilon_{n}^{2}},
+    \label{GRnk2}
+  \end{equation}
+
+  \begin{equation}
+    \sum_{n=-\infty}^{\infty}G_{R}=\sum_{r=-\infty}^{\infty}\frac{2(\epsilon' - i|Im\Sigma|)}{\epsilon_{f}^{2}}e^{2\pi ir\left(\frac{\epsilon'^{2}}{\epsilon_{f}^{2}}\right)}\int_{-\infty}^{\infty}\frac{e^{2\pi irx}}{\left[\frac{2i\epsilon'|Im\Sigma|}{\epsilon_{f}^{2}}-x\right]}dx
+    \label{GRPoisson}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
+  La parte imaginaria de la autoenergía queda:
+  \begin{equation}
+    \mid Im\Sigma\mid=\frac{n_{i}L_{x}L_{y}V_{o}^{2}\epsilon'}{a_{x}\pi^{2} \epsilon_{f}^{2}}\sum_{r}\int_{0}^{a_{x}/2l^{2}}dk_{y} \int_{0}^{2\pi}d\beta e^{-\frac{4\pi\epsilon'|Im \Sigma|}{\epsilon_{f}^{2}}}e^{2\pi ir\frac{\epsilon'^{2}}{\epsilon_{f}^{2}}}.
+    \label{|ImE|}
+  \end{equation}
+  de donde se obtiene:
+  \begin{equation}
+    \frac{\left|\textbf{Im}\Sigma\right|}{\epsilon}=\frac{n_{i}L_{x}L_{y}V_{o}^{2}}{a_{x}\pi^{2} \varepsilon_{f}^{2}}\int_{0}^{a_{x}/2l^{2}}dk_{y} \int_{0}^{2\pi}d\beta S(\delta,\lambda).
+    \label{Im/e}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
+  Se puede aproximar la expresión para la parte imaginaria de la autoenergía de la siguiente forma
+  \begin{equation}
+    \tau(\epsilon)\frac{\epsilon}{\epsilon_{f}}S(\delta,\lambda)=\tau_{o},
+    \label{tau}
+   \end{equation}
+  donde
+   \begin{equation}
+    \tau_{o}=\frac{\pi\hbar l^{2}\epsilon_{f}}{N_{i}V_{o}^{2}}.
+    \label{tau_0}
+   \end{equation}
 \end{frame}
 
 \begin{frame}
+  Se tiene entonces que la contribución de Boltzmann $\sigma_B$ puede escribirse así:
+  \begin{equation}
+    \sigma_{B}=\sigma_{\tau}\int d\epsilon N(\zeta)\left(-\frac{\partial f}{\partial\epsilon}\right),
+  \end{equation}
+  donde $ \sigma_{\tau} = \sigma_{o} \tau_{o} $.\\
+  \vspace{0.5cm}
+  Esta expresión concuerda con investigaciones realizadas
+  anteriormente para la conductividad longitudinal de estructuras de grafeno con patrones de Moiré \cite{Kumar2017}.
+\end{frame}
+
+\begin{frame}
+
+  En el presente trabajo, la conductividad longitudinal es complementada por un
+  término cuántico que puede explicar las oscilaciones magnéticas a altas temperaturas.
+
+  \begin{equation}
+      \sigma_{xx} = \sigma_{\tau} \int d\epsilon N(\zeta) \left(-\frac{\partial f}{\partial\epsilon}\right) \left[ 1 - \chi(\epsilon) \frac{\partial S(\delta,\lambda)}{\partial \lambda} \right],
+      \label{sigma_xx}
+  \end{equation}
+  donde
+  \begin{equation}
+      \chi(\epsilon) =  \frac{8\pi}{\tau_o}\frac{\epsilon^2}{\epsilon_{f}^{2}}.
+  \end{equation}
 \end{frame}
